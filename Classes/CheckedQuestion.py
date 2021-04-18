@@ -1,4 +1,3 @@
-# add: time per question
 
 
 class CheckedQuestion:

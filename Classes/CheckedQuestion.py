@@ -1,5 +1,6 @@
 print(5)
-print(17)
+print(20)
+
 
 class CheckedQuestion:
 

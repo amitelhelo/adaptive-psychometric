@@ -1,6 +1,6 @@
 from PsychoProject.Classes.Student import Student
 from PsychoProject.PracticeSessions.CATPracticeSession import CATPracticeSession
-# weird stuff - imports takes 0.5 seconds even if we only import only one class
+# check why the import takes so much time (about 0.5 seconds)
 from PsychoProject.PracticeSessions.TimerPracticeSession import TimerPracticeSession
 
 

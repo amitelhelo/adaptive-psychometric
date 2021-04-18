@@ -1,5 +1,5 @@
 # TODO solved questions and mistakes to fix should be dictionaries with categories as keys
-# TODO create GUI for student's page. should be the main page for the website
+# TODO create GUI for student's page
 # TODO mistakes to check: remember at what date the mistake occurred
 
 

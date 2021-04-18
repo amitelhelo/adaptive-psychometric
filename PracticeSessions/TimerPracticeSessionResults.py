@@ -1,7 +1,7 @@
 from PsychoProject.Classes.CheckedQuestion import CheckedQuestion
 from PsychoProject.PracticeSessions.GeneralPracticeSessionResults import GeneralPracticeSessionResults
 from PsychoProject.PracticeSessions.TimerPracticeSessionResultsGUI import TimerPracticeSessionResultsGUI
-from PsychoProject.functions import get_item_from_set
+from PsychoProject.general_functions_for_picking_questions import get_item_from_set
 
 
 class TimerPracticeSessionResults(GeneralPracticeSessionResults):

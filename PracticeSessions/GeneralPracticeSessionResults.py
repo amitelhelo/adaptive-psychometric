@@ -1,6 +1,6 @@
 from PsychoProject.Classes.CheckedQuestion import CheckedQuestion
 from PsychoProject.PracticeSessions.GeneralPracticeSessionResultsGUI import GeneralPracticeSessionResultsGUI
-from PsychoProject.functions import get_item_from_set
+from PsychoProject.general_functions_for_picking_questions import get_item_from_set
 
 
 class GeneralPracticeSessionResults:

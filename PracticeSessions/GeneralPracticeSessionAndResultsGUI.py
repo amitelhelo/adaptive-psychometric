@@ -1,6 +1,6 @@
 from tkinter import *
 from PsychoProject.PracticeSessions.GraphQuestionsGUI import GraphQuestionsGUI
-from PsychoProject.functions import get_question_label, get_question_image
+from PsychoProject.general_functions_for_picking_questions import get_question_label, get_question_image
 
 buttons_address = r'C:\PsychometricProjectData\buttons'
 

@@ -4,7 +4,7 @@ from PsychoProject.LoadQuestions.LoadQuestionsFromDatabase import load_questions
 from PsychoProject.PracticeSessions.GeneralPracticeSessionGUI import GeneralPracticeSessionGUI
 from PsychoProject.PracticeSessions.GeneralPracticeSessionResults import GeneralPracticeSessionResults
 from datetime import datetime
-from PsychoProject.functions import get_item_from_set
+from PsychoProject.general_functions_for_picking_questions import get_item_from_set
 
 
 # TODO move current_checked_question here from TimerPracticeSession

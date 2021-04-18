@@ -1,6 +1,6 @@
 from PIL import ImageTk, Image as PIL_Image
 from tkinter import *
-from PsychoProject.functions import get_question_label, resize
+from PsychoProject.general_functions_for_picking_questions import get_question_label, resize
 
 
 class GraphQuestionsGUI:

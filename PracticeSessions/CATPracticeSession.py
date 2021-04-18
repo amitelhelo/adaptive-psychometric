@@ -1,7 +1,8 @@
 from PsychoProject.PracticeSessions.CATPracticeSessionGUI import CATPracticeSessionGUI
 from PsychoProject.PracticeSessions.CATPracticeSessionResults import CATPracticeSessionResults
 from PsychoProject.PracticeSessions.GeneralPracticeSession import GeneralPracticeSession
-from PsychoProject.functions import choose_difficulties, choose_similar_questions_by_difficulties
+from PsychoProject.general_functions_for_picking_questions import choose_difficulties, \
+    choose_similar_questions_by_difficulties
 
 db_address1 = r'C:\PsychometricProjectData\PsychoProjectDatabase.xlsx'
 

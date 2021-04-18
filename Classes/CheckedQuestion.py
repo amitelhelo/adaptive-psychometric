@@ -1,4 +1,4 @@
-
+print(5)
 
 class CheckedQuestion:
 

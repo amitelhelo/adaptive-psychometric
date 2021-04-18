@@ -1,7 +1,8 @@
 from PsychoProject.Classes.Student import Student
 from PsychoProject.PracticeSessions.CATPracticeSession import CATPracticeSession
-# check why the import takes so much time (about 0.5 seconds)
 from PsychoProject.PracticeSessions.TimerPracticeSession import TimerPracticeSession
+
+# TODO check why the CATPracticeSession import takes so long (about 0.5 seconds)
 
 
 def start_practice_timer():

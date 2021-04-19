@@ -1,13 +1,13 @@
 from PsychoProject.Classes.CheckedQuestion import CheckedQuestion
 from PsychoProject.PracticeSessions.GeneralPracticeSessionResults import GeneralPracticeSessionResults
-from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionResultsGUI import TimerPracticeSessionResultsGUI
+from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionResultsGUI import DecisionsAndTimingPracticeSessionResultsGUI
 from PsychoProject.general_functions_for_picking_questions import get_item_from_set
 
 
-class TimerPracticeSessionResults(GeneralPracticeSessionResults):
+class DecisionsAndTimingPracticeSessionResults(GeneralPracticeSessionResults):
 
     def __init__(self, practice_session):
-        super().__init__(practice_session, gui=TimerPracticeSessionResultsGUI(self))
+        super().__init__(practice_session, gui=DecisionsAndTimingPracticeSessionResultsGUI(self))
         self.category = "Timer"
         self.students_time_spent_on_questions = None
         self.checked_questions_dict = None

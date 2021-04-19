@@ -2,7 +2,7 @@ from PsychoProject.PracticeSessions.GeneralPracticeSessionResultsGUI import Gene
 from tkinter import *
 
 
-class TimerPracticeSessionResultsGUI(GeneralPracticeSessionResultsGUI):
+class DecisionsAndTimingPracticeSessionResultsGUI(GeneralPracticeSessionResultsGUI):
     def __init__(self, session_results, graph_session=True):
         super().__init__(session_results, graph_session)
         self.time_spent = None

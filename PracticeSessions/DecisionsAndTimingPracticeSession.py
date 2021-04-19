@@ -1,15 +1,15 @@
 from PsychoProject.Classes.CheckedQuestion import CheckedQuestion
 from PsychoProject.PracticeSessions.GeneralPracticeSession import GeneralPracticeSession, get_item_from_set
-from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionGUI import TimerPracticeSessionGUI
-from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionResults import TimerPracticeSessionResults
+from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionGUI import DecisionsAndTimingPracticeSessionGUI
+from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionResults import DecisionsAndTimingPracticeSessionResults
 
 db_address1 = r'C:\Users\amit7\PsychoRes\former_tests\PsychoProjectDatabase.xlsx'
 
 
-class TimerPracticeSession(GeneralPracticeSession):
+class DecisionsAndTimingPracticeSession(GeneralPracticeSession):
     def __init__(self, student, category, db_address=db_address1, how_many_questions=20):
-        super().__init__(student, category, db_address, gui=TimerPracticeSessionGUI(self),
-                         how_many_questions=how_many_questions, session_results=TimerPracticeSessionResults(self),
+        super().__init__(student, category, db_address, gui=DecisionsAndTimingPracticeSessionGUI(self),
+                         how_many_questions=how_many_questions, session_results=DecisionsAndTimingPracticeSessionResults(self),
                          is_graph_session=True)
         self.category = "Timer"
         self.current_checked_question = None
@@ -105,7 +105,7 @@ class TimerPracticeSession(GeneralPracticeSession):
     def check_answer(self, answer_chosen):
         self.set_answered_current_question(True)
         self.update_times_after_answering_question()
-        self.gui.stop_old_timer()  # TODO take to time_remaining from the old timer and stop it before calculations
+        self.gui.stop_old_timer()  # TODO stop the clock in earlier stage
         self.disable_or_enable_questions()
         self.gui.color_answered_questions()
         super().check_answer(answer_chosen)

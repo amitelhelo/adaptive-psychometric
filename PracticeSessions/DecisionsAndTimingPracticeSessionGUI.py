@@ -2,7 +2,7 @@ from tkinter import *
 from PsychoProject.PracticeSessions.GeneralPracticeSessionGUI import GeneralPracticeSessionGUI
 
 
-class TimerPracticeSessionGUI(GeneralPracticeSessionGUI):
+class DecisionsAndTimingPracticeSessionGUI(GeneralPracticeSessionGUI):
     def __init__(self, practice_session):
         super().__init__(practice_session, graph_session=True)
         self.run_timer = True

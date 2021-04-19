@@ -1,6 +1,6 @@
 from PsychoProject.Classes.Student import Student
 from PsychoProject.PracticeSessions.CATPracticeSession import CATPracticeSession
-from PsychoProject.PracticeSessions.TimerPracticeSession import TimerPracticeSession
+from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSession import TimerPracticeSession
 
 # TODO check why the CATPracticeSession import takes so long (about 0.5 seconds)
 

@@ -1,7 +1,7 @@
 from PsychoProject.Classes.CheckedQuestion import CheckedQuestion
 from PsychoProject.PracticeSessions.GeneralPracticeSession import GeneralPracticeSession, get_item_from_set
-from PsychoProject.PracticeSessions.TimerPracticeSessionGUI import TimerPracticeSessionGUI
-from PsychoProject.PracticeSessions.TimerPracticeSessionResults import TimerPracticeSessionResults
+from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionGUI import TimerPracticeSessionGUI
+from PsychoProject.PracticeSessions.DecisionsAndTimingPracticeSessionResults import TimerPracticeSessionResults
 
 db_address1 = r'C:\Users\amit7\PsychoRes\former_tests\PsychoProjectDatabase.xlsx'
 

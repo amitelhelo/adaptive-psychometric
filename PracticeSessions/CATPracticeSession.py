@@ -17,7 +17,9 @@ class CATPracticeSession(GeneralPracticeSession):
         self.recently_mistaken = None
 
     def decide_and_add_to_checked_questions(self):
-        if not (self.recently_mistaken is not None and self.recently_mistaken == self.current_question):
+        if self.recently_mistaken is not None and  self.recently_mistaken == self.current_question:
+            self.question_number_in_session -= 1
+        if self.recently_mistaken is None or self.recently_mistaken != self.current_question:  # TODO simplify
             self.add_to_checked_questions()
 
     def add_to_checked_questions(self):
@@ -143,18 +145,26 @@ class CATPracticeSession(GeneralPracticeSession):
         if (all_similar_questions is None) or (len(all_similar_questions.values()) < 3):  # .values() -> bad complexity?
             return None
         chosen_difficulties = self.get_difficulties(all_similar_questions)
-        three_similar_questions = choose_similar_questions_by_difficulties(chosen_difficulties, all_similar_questions)
-        return three_similar_questions
+        chosen_similar_questions = choose_similar_questions_by_difficulties(chosen_difficulties, all_similar_questions)
+        # TODO change to a more flexible version - allow choosing +-1 difficulties
+        if len(chosen_similar_questions) != 3:
+            chosen_similar_questions = None
+        return chosen_similar_questions
 
-    def get_difficulties(self, all_similar_questions):
-        difficulties = sorted(list(all_similar_questions.keys()))
-        chosen_difficulties = choose_difficulties(difficulties, self.current_question.difficulty)
+    def get_difficulties(self, all_similar_questions):  # TODO change to more elegant implementation
+        relevant_difficulties = []
+        for difficulty in list(all_similar_questions.keys()):
+            if difficulty < self.current_question.difficulty:
+                relevant_difficulties.append(difficulty)
+        relevant_difficulties.sort()
+        chosen_difficulties = choose_difficulties(relevant_difficulties, self.current_question.difficulty)
         return chosen_difficulties
 
     def stop_fixing_a_mistake(self):
         self.fixing_a_mistake_stage = False
         self.fixing_a_mistake_questions = None
-        self.session_results.add_to_results(self.recently_mistaken, 0)
+        # self.session_results.add_to_results(self.recently_mistaken, 0)
+        # TODO check if info about user mistake while in the "fixing a mistake" phase is saved properly
         self.recently_mistaken = None
         return None
 

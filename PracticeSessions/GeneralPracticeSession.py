@@ -1,5 +1,5 @@
 from PsychoProject.Classes.CheckedQuestion import CheckedQuestion
-from PsychoProject.LoadQuestions.CreateQuestions import add_to_dict
+from PsychoProject.LoadQuestions.GenerateQuestions import add_to_dict
 from PsychoProject.LoadQuestions.LoadQuestionsFromDatabase import load_questions_from_database
 from PsychoProject.PracticeSessions.GeneralPracticeSessionGUI import GeneralPracticeSessionGUI
 from PsychoProject.PracticeSessions.GeneralPracticeSessionResults import GeneralPracticeSessionResults
@@ -12,7 +12,7 @@ class GeneralPracticeSession:
 
     def __init__(self, student, category, db_address, how_many_questions=12, current_difficulty=1,
                  gui=None, session_results=None, is_graph_session=False):
-        self.questions_dict = load_questions_from_database(db_address, category)
+        self.questions_dict, self.equivalence_classes_dict = load_questions_from_database(db_address, category)
         self.student = student
         if gui is None:
             self.gui = GeneralPracticeSessionGUI(self)
@@ -144,16 +144,8 @@ class GeneralPracticeSession:
                 break
         return None
 
-    def get_similar_questions(self):  # naive implementation, TODO create equivalence classes for similar questions
-        difficulty = self.current_question.difficulty
-        equivalence_class = self.current_question.equivalence_class
-        similar_questions = {}
-        for level in range(1, difficulty):
-            if level in self.questions_dict:
-                for question in self.questions_dict[level]:
-                    if question.equivalence_class == equivalence_class and not self.mistook_question_already(question):
-                        add_to_dict(similar_questions, question)
-        return similar_questions
+    def get_similar_questions(self):
+        return self.equivalence_classes_dict[self.current_question.equivalence_class]
 
     def set_current_checked_question(self):
         self.current_checked_question = CheckedQuestion(self.current_question)

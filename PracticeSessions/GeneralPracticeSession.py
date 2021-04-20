@@ -144,7 +144,7 @@ class GeneralPracticeSession:
                 break
         return None
 
-    def get_similar_questions(self):  # bad complexity - create EquivalenceClass class.
+    def get_similar_questions(self):  # naive implementation, TODO create equivalence classes for similar questions
         difficulty = self.current_question.difficulty
         equivalence_class = self.current_question.equivalence_class
         similar_questions = {}
